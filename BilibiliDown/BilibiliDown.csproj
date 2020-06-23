@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75936112-345F-49F6-A4D9-24B553387A4A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BilibiliDown</RootNamespace>
+    <AssemblyName>BilibiliDown</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CData.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\FileUtil.cs" />
+    <Compile Include="Common\HttpHelper.cs" />
+    <Compile Include="Common\HttpItem.cs" />
+    <Compile Include="Common\HttpResult.cs" />
+    <Compile Include="Common\ManagementSystemInfo.cs" />
+    <Compile Include="Common\PostDataType.cs" />
+    <Compile Include="Common\ResultCookieType.cs" />
+    <Compile Include="Common\ResultType.cs" />
+    <Compile Include="Common\XMLUtil.cs" />
+    <Compile Include="Controls\DataGridViewProgressCell.cs" />
+    <Compile Include="Controls\DataGridViewProgressColumn.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCert.Designer.cs">
+      <DependentUpon>frmCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGlobalConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlobalConfig.Designer.cs">
+      <DependentUpon>frmGlobalConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AreasItem.cs" />
+    <Compile Include="Model\AudioItem.cs" />
+    <Compile Include="Model\BiliUserInfo.cs" />
+    <Compile Include="Model\BLData.cs" />
+    <Compile Include="Model\BLResponse.cs" />
+    <Compile Include="Model\Dash.cs" />
+    <Compile Include="Model\Dimension.cs" />
+    <Compile Include="Model\Dimension1.cs" />
+    <Compile Include="Model\DownLoadVideoInfo.cs" />
+    <Compile Include="Model\DownLoadVideoInfoDetail.cs" />
+    <Compile Include="Model\DurlItem.cs" />
+    <Compile Include="Model\EntityConfig.cs" />
+    <Compile Include="Model\EpisodesItem.cs" />
+    <Compile Include="Model\Newest_ep.cs" />
+    <Compile Include="Model\New_ep.cs" />
+    <Compile Include="Model\Owner.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\PageVideo.cs" />
+    <Compile Include="Model\Pendant.cs" />
+    <Compile Include="Model\Publish.cs" />
+    <Compile Include="Model\Rating.cs" />
+    <Compile Include="Model\Result.cs" />
+    <Compile Include="Model\Rights.cs" />
+    <Compile Include="Model\SeasonResult.cs" />
+    <Compile Include="Model\SeasonsItem.cs" />
+    <Compile Include="Model\SegmentBase.cs" />
+    <Compile Include="Model\Segment_base.cs" />
+    <Compile Include="Model\Stat.cs" />
+    <Compile Include="Model\Subtitle.cs" />
+    <Compile Include="Model\TypeDown.cs" />
+    <Compile Include="Model\TypeVideo.cs" />
+    <Compile Include="Model\Up_info.cs" />
+    <Compile Include="Model\VideoInfo.cs" />
+    <Compile Include="Model\VideoItem.cs" />
+    <Compile Include="Pojo\BV\BVMessagePack.cs" />
+    <Compile Include="Pojo\BV\Data.cs" />
+    <Compile Include="Pojo\MessagePack.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubForms\frmBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\frmBarCode.Designer.cs">
+      <DependentUpon>frmBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmImgs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmImgs.Designer.cs">
+      <DependentUpon>FrmImgs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\GetOpenId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\GetOpenId.Designer.cs">
+      <DependentUpon>GetOpenId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\QrLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\QrLogin.Designer.cs">
+      <DependentUpon>QrLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Subscribe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Subscribe.Designer.cs">
+      <DependentUpon>Subscribe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\BiliUtil.cs" />
+    <Compile Include="Util\HttpUtil.cs" />
+    <Compile Include="Util\StringUtil.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCert.resx">
+      <DependentUpon>frmCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlobalConfig.resx">
+      <DependentUpon>frmGlobalConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubForms\frmBarCode.resx">
+      <DependentUpon>frmBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmImgs.resx">
+      <DependentUpon>FrmImgs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\GetOpenId.resx">
+      <DependentUpon>GetOpenId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\QrLogin.resx">
+      <DependentUpon>QrLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Subscribe.resx">
+      <DependentUpon>Subscribe.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

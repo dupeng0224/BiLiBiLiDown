@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/BilibiliDown/v16
+/BilibiliDown/bin/Debug
+/BilibiliDown/obj/Debug
+/packages
